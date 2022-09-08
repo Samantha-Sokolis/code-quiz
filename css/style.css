@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Verdana;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+
+h1 {
+    font-size: x-large;
+    text-align: center;
+}
+
+h2 {
+    font-size: medium;
+    text-align: center;
+}
+
+button {
+    align-self: center;
+    background: purple;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    letter-spacing: 0.21px;
+    line-height: 10px;
+    max-width: 200px;
+    padding: 20px 52px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    margin-top: 0.6em;
+  }
