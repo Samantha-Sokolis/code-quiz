@@ -1,7 +1,27 @@
 * {
     box-sizing: border-box;
   }
-  
+
+  .scores-timer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  .timer-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: right;  
+    margin-right: 20px;
+}
+
+#timer-count {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: right;  
+    margin-right: 20px;
+}
+
   body {
     font-family: Verdana;
     margin: 0;
@@ -21,8 +41,11 @@ h2 {
     text-align: center;
 }
 
+section {
+    align-items: center;
+  }
+
 button {
-    align-self: center;
     background: purple;
     border-radius: 8px;
     color: #ffffff;
@@ -38,3 +61,5 @@ button {
     transition-timing-function: linear;
     margin-top: 0.6em;
   }
+
+  
