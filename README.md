@@ -29,3 +29,8 @@ THEN I can save my initials and my score
 ```
 
 ## Image
+
+## Notes
+These pages were used as a resource to build initial functionality, before adjusting CSS and HTML to fit required criteria: https://www.sitepoint.com/simple-javascript-quiz/
+
+https://gamedevacademy.org/javascript-quiz-tutorial/

@@ -17,206 +17,65 @@ function startGame() {
 // this function also needs to start quiz
 startButton.addEventListener("click", startGame); 
 
-function buildQuiz(){}
-function showResults(){}
+//first question and answer
+let question = {
+    title: 'Commonly used data types DO NOT include:',
+    alternatives: ['strings', 'booleans', 'alerts', 'numbers'],
+    correctAnswer: 2
+};
 
-// quiz starts
-var quizContainer = document.getElementById('quiz');
-var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit');
+function showQuestion(q) {
+  let titleDiv = document.getElementById('title');
+  titleDiv.textContent = q.title;
 
-var myQuestions = [
-  {
-    question: "Commonly used data types DO NOT include:",
-    answers: {
-      a: "strings",
-      b: "booleans",
-      c: "alerts",
-      d: "numbers"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "Which one of these is The condition in an if / else statement is enclosed within _______.a JavaScript package manager?",
-    answers: {
-      a: "Quotes",
-      b: "curly brackets",
-      c: "parentheses",
-      d: "square brackets"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "Arrays in JavaScript can be used to store_______.?",
-    answers: {
-      a: "numbers and strings",
-      b: "other arrays",
-      c: "booleans",
-      d: "all of the above"
-    },
-    correctAnswer: "d"
-  },
-  {
-    question: "String values must be enclosed within _____ when being assigned to variables.",
-    answers: {
-      a: "commas",
-      b: "curly brackets",
-      c: "quotes",
-      d: "parentheses"
-    },
-    correctAnswer: "c"
-  },
-];
+  let alts = document.querySelectorAll('.alternative');
 
-// display quiz right away
-buildQuiz();
-
-// on submit, show results
-submitButton.addEventListener('click', showResults);
-
-// quiz functions below
-function buildQuiz(){
-  // variable to store the HTML output
-  var output = [];
-
-  // for each question...
-  myQuestions.forEach(
-    (currentQuestion, questionNumber) => {
-
-      // variable to store the list of possible answers
-      var answers = [];
-
-      // and for each available answer...
-      for(letter in currentQuestion.answers){
-
-        // ...add an HTML radio button
-        answers.push(
-          `<label>
-            <input type="radio" name="question${questionNumber}" value="${letter}">
-            ${letter} :
-            ${currentQuestion.answers[letter]}
-          </label>`
-        );
+  alts.forEach(function(element, index){
+    element.textContent = q.alternatives[index];
+    element.addEventListener('click', function(){
+      if (q.correctAnswer == index) {
+        window.alert('Correct Answer!');
+      } else {
+        window.alert('Wrong Answer!');
       }
-
-      // add this question and its answers to the output
-      output.push(
-        `<div class="question"> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join('')} </div>`
-      );
-    }
-  );
-
-  // finally combine our output list into one string of HTML and put it on the page
-  quizContainer.innerHTML = output.join('');
-}
-
-myQuestions.forEach( (currentQuestion, questionNumber) => {
-  // code to run for each question goes here
-  const answers = [];
-
-// and for each available answer...
-for(letter in currentQuestion.answers){
-
-  // ...add an html radio button
-  answers.push(
-    `<label>
-      <input type="radio" name="question${questionNumber}" value="${letter}">
-      ${letter} :
-      ${currentQuestion.answers[letter]}
-    </label>`
-  );
-}
-
-// add this question and its answers to the output
-output.push(
-  `<div class="question"> ${currentQuestion.question} </div>
-  <div class="answers"> ${answers.join('')} </div>`
-);
-});
-
-quizContainer.innerHTML = output.join('');
-
-function showResults(){
-
-  // gather answer containers from our quiz
-  const answerContainers = quizContainer.querySelectorAll('.answers');
-
-  // keep track of user's answers
-  let numCorrect = 0;
-
-  // for each question...
-  myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-    // find selected answer
-    const answerContainer = answerContainers[questionNumber];
-    const selector = `input[name=question${questionNumber}]:checked`;
-    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-    // if answer is correct
-    if(userAnswer === currentQuestion.correctAnswer){
-      // add to the number of correct answers
-      numCorrect++;
-
-      // color the answers green
-      answerContainers[questionNumber].style.color = 'lightgreen';
-    }
-    // if answer is wrong or blank
-    else{
-      // color the answers red
-      answerContainers[questionNumber].style.color = 'red';
-    }
+    });
   });
-
-  // show number of correct answers out of total
-  resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
 }
 
-// gather answer containers from our quiz
-const answerContainers = quizContainer.querySelectorAll('.answers');
+showQuestion(question);
 
-// keep track of user's answers
-let numCorrect = 0;
+//   {
+//     question: "Which one of these is The condition in an if / else statement is enclosed within _______.a JavaScript package manager?",
+//     answers: {
+//       a: "Quotes",
+//       b: "curly brackets",
+//       c: "parentheses",
+//       d: "square brackets"
+//     },
+//     correctAnswer: "c"
+//   },
+//   {
+//     question: "Arrays in JavaScript can be used to store_______.?",
+//     answers: {
+//       a: "numbers and strings",
+//       b: "other arrays",
+//       c: "booleans",
+//       d: "all of the above"
+//     },
+//     correctAnswer: "d"
+//   },
+//   {
+//     question: "String values must be enclosed within _____ when being assigned to variables.",
+//     answers: {
+//       a: "commas",
+//       b: "curly brackets",
+//       c: "quotes",
+//       d: "parentheses"
+//     },
+//     correctAnswer: "c"
+//   },
+// ];
 
-// for each question...
-myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-  // find selected answer
-  const answerContainer = answerContainers[questionNumber];
-  const selector = `input[name=question${questionNumber}]:checked`;
-  const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-  // if answer is correct
-  if(userAnswer === currentQuestion.correctAnswer){
-    // add to the number of correct answers
-    numCorrect++;
-
-    // color the answers green
-    answerContainers[questionNumber].style.color = 'lightgreen';
-  }
-  // if answer is wrong or blank
-  else{
-    // color the answers red
-    answerContainers[questionNumber].style.color = 'red';
-  }
-});
-
-// if answer is correct
-if(userAnswer === currentQuestion.correctAnswer){
-  // add to the number of correct answers
-  numCorrect++;
-
-  // color the answers green
-  answerContainers[questionNumber].style.color = 'lightgreen';
-}
-// if answer is wrong or blank
-else{
-  // color the answers red
-  answerContainers[questionNumber].style.color = 'red';
-}
-
-// show number of correct answers out of total
-resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
 
 // First multiple choice question appears
 
