@@ -17,7 +17,8 @@ function startGame() {
 // this function also needs to start quiz
 startButton.addEventListener("click", startGame); 
 
-//first question and answer
+
+// First multiple choice question appears
 let question = {
     title: 'Commonly used data types DO NOT include:',
     alternatives: ['strings', 'booleans', 'alerts', 'numbers'],
@@ -29,7 +30,7 @@ function showQuestion(q) {
   titleDiv.textContent = q.title;
 
   let alts = document.querySelectorAll('.alternative');
-
+//alerts added for correct or incorrect question
   alts.forEach(function(element, index){
     element.textContent = q.alternatives[index];
     element.addEventListener('click', function(){
@@ -76,8 +77,6 @@ showQuestion(question);
 //   },
 // ];
 
-
-// First multiple choice question appears
 
 // When user selects CORRECT answer, next question appears
 
