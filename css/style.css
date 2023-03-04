@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    background-color: rgb(225, 200, 249);
   }
 
 .scores-timer-container {
@@ -9,10 +10,11 @@
   }
 
 .timer-text {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
     font-size: 20px;
     text-align: center;  
 }
+
 
 #start {
   display: flex;
@@ -28,12 +30,19 @@
   padding: 1em;
 }
 
+#scoreDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+}
+
 #submit-button {
   align-self: center;
 }
 
-#timer-count {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+#countdown-timer {
+    font-family: Verdana, Tahoma, sans-serif;
     font-size: 20px;
     text-align: center;  
 }
@@ -43,7 +52,7 @@
 }
 
 #quiz {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Tahoma, sans-serif;
   font-size: 15px;
   color: black;
   text-align: center;  
@@ -65,20 +74,20 @@ body {
     justify-content: center;
   }
 
-#title {
+#homeContainer {
   flex-direction: column;
   text-align: center;
 }
 
 button {
     background: purple;
-    border-radius: 8px;
+    border-radius: 12px;
     color: #ffffff;
     cursor: pointer;
     font-size: 20px;
     letter-spacing: 0.21px;
-    line-height: 10px;
-    max-width: 400px;
+    line-height: 1.6;
+    max-width: 600px;
     padding: 20px 52px;
     text-align: center;
     transition-duration: 0.15s;
@@ -87,22 +96,6 @@ button {
     margin-top: 0.6em;
   }
 
-.alternative {
-    background: purple;
-    border-radius: 8px;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 20px;
-    letter-spacing: 0.21px;
-    line-height: 10px;
-    max-width: 400px;
-    padding: 20px 52px;
-    text-align: center;
-    transition-duration: 0.15s;
-    transition-property: background-color;
-    transition-timing-function: linear;
-    margin-top: 0.6em;
-}
 
 h1 {
     font-size: x-large;

@@ -1,6 +1,6 @@
 // When user clicks the start button, then a timer starts and user is presented with a question
 
-    // Declare global variables 
+    // Global variables for quiz components
     var startBtn = document.getElementById("startBtn");
     var time = 75;
     var time_remaining = true;
@@ -21,30 +21,26 @@
     // question index
     let i = 0;
 
-// QUESTIONS ARRAY:
+// Array:
 
 var questionsArray = [
 {
     question: "Question: What is the HTML tag under which you can write the JavaScript code?",
-    imageSrc: "",
-    answerChoice: ["A) <javascript>", "B) <scripted>", "C) <script>", "D) <js>"],
+    answerChoice: ["A) javascript", "B) html", "C) script", "D) js"],
     correctAnswer: 2
 }, 
 {
     question: "Question: What are variables used for in JavaScript Programs?",
-    imageSrc: "",
     answerChoice: ["A) Storing numbers, dates, or other values", "B) Varying randomly", "D) Causing high-school algebra flashbacks", "D) None of the above"],
     correctAnswer: 0
 },
 {
     question: "Question: Which method adds a new item to the end of an array and returns the new length?",
-    imageSrc: "",
     answerChoice: ["A) shift()", "B) return() ", "C) push() ", "D) pop()"],
     correctAnswer: 2
 }, 
 {
     question: "Question: Which of the following can't be done with client-side JavaScript?",
-    imageSrc: "",
     answerChoice: ["A) Sending a form's contents by email", "B) Validating a form", "C) Storing the form's contents to a database file on the server", "D) None of the above"],
     correctAnswer: 2
 },
@@ -54,9 +50,7 @@ var questionsArray = [
     correctAnswer: 1
 }];
 
-//COUNTDOWN TIMER FUNCTION: set countdown timer and interval. Set time-related valiables.
-
-//change the seconds variable every second.
+//Timer function - changes every second.
 var countdownTimerInterval = setInterval(setCountdownTimer, 1000);
 
 //function that changes the time var
@@ -67,12 +61,11 @@ function setCountdownTimer() {
         end_quiz();
         time = 0;    
         // clearInterval(countdownTimerInterval);
-        //alert user and stop quiz
         }
         document.getElementById("timer").innerHTML = time;
     }
 
-// START EVENT LISTENER: When user clicks Start button, start the countdown timer and quiz questions. Add an event listener to each button.
+// When user clicks Start button, start the countdown timer and quiz questions. 
 startBtn.addEventListener("click", function() {
     quizContainer.style.display = "block";
     homeContainer.style.display ="none";
@@ -84,7 +77,7 @@ startBtn.addEventListener("click", function() {
     time_start= true;
 });
 
-// QUESTIONS FUNCTION: display questions and multiple-choice answers
+// Onclick event listener starts quiz and displays questions
 
 function setQuizQuestions() {
         questionHeading.textContent = questionsArray[i].question;
@@ -96,9 +89,6 @@ function setQuizQuestions() {
 
 // When user answers a question: then user is presented with another question
 
-// Store user answer choices. Clear elements and update score count.
-
-// Change to next question
 answerChoiceA.addEventListener('click', function(event) {
         event.stopPropagation();
         correctAnswer= questionsArray[i].correctAnswer;
@@ -139,7 +129,7 @@ answerChoiceB.addEventListener('click', function(event) {
     correctAnswer = questionsArray[i].correctAnswer;
     console.log(correctAnswer);
         if (1 === correctAnswer) { 
-            document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it!";
+            document.getElementById("AnswerResponse").innerHTML = "Correct!";
             setTimeout(function() {
                 document.getElementById("AnswerResponse").innerHTML = "";
                     },
@@ -149,7 +139,7 @@ answerChoiceB.addEventListener('click', function(event) {
             document.getElementById("score").innerHTML = score;
         } else {
             time_remaining -= 5;
-            document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
+            document.getElementById("AnswerResponse").innerHTML = "Incorrect!";
             setTimeout(function() {
                 document.getElementById("AnswerResponse").innerHTML = "";
                     },
@@ -169,7 +159,7 @@ answerChoiceC.addEventListener('click', function(event) {
     correctAnswer = questionsArray[i].correctAnswer;
     console.log(correctAnswer);
     if (2 === correctAnswer) { 
-        document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it!";
+        document.getElementById("AnswerResponse").innerHTML = "Correct!";
         setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
                 },
@@ -179,7 +169,7 @@ answerChoiceC.addEventListener('click', function(event) {
         document.getElementById("score").innerHTML = score;
     } else {
         time_remaining -= 5;
-        document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
+        document.getElementById("AnswerResponse").innerHTML = "Incorrect!";
         setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
                 },
@@ -199,7 +189,7 @@ answerChoiceD.addEventListener('click', function(event) {
     correctAnswer= questionsArray[i].correctAnswer.value;
     console.log(correctAnswer);
     if (3 === correctAnswer) { 
-        document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it!";
+        document.getElementById("AnswerResponse").innerHTML = "Correct!";
         setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
                 },
@@ -209,7 +199,7 @@ answerChoiceD.addEventListener('click', function(event) {
         document.getElementById("score").innerHTML = score;
     } else {
         time_remaining -= 5;
-        document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
+        document.getElementById("AnswerResponse").innerHTML = "Incorrect!";
         setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
                 },
