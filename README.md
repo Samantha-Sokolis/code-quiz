@@ -32,7 +32,7 @@ THEN I can save my initials and my score
 
 ![Screenshot of quiz page](./assets/screenshot_quiz1.png)
 
-![Screenshot of quiz question page](./assets/screenshot_quiz1.png)
+![Screenshot of quiz question page](./assets/screenshot_quiz2.png)
 
 https://samantha-sokolis.github.io/code-quiz/
 
