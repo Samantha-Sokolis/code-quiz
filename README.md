@@ -28,8 +28,15 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 
-## URL:
+## Images and Links
+
+![Screenshot of quiz page](./assets/screenshot_quiz1.png)
+
+![Screenshot of quiz question page](./assets/screenshot_quiz1.png)
+
 https://samantha-sokolis.github.io/code-quiz/
+
+
 
 ## Notes
 These pages were used as a resource to build initial functionality, before adjusting CSS and HTML to fit required criteria: 
