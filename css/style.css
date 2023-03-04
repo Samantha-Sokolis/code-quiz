@@ -23,11 +23,13 @@
 
 #results {
   display: flex;
-}
-
-#submit {
   flex-direction: column;
   justify-content: center;
+  padding: 1em;
+}
+
+#submit-button {
+  align-self: center;
 }
 
 #timer-count {
